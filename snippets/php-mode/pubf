@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: public_function
+# key: pubf
+# --
+public function ${1:method}(${2:args}) {
+    $0
+}

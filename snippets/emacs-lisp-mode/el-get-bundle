@@ -1,0 +1,4 @@
+#name: el-get-bundle
+#key: elg
+# --
+(el-get-bundle $0)
