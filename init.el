@@ -1,4 +1,11 @@
 ;; Install el-get if not
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+(insert )
 (add-to-list 'load-path (locate-user-emacs-file "el-get/el-get"))
 (unless (require 'el-get nil 'noerror)
   (with-current-buffer
@@ -26,6 +33,7 @@
 (el-get-bundle helm-ag)
 (el-get-bundle git-gutter)
 (el-get-bundle helm-ls-git)
+(el-get-bundle markdown-mode)
 
 (setq inhibit-startup-message t) ;; do not show message on start up
 (global-linum-mode t) ;; show line number
@@ -38,3 +46,18 @@
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>")) ;; use C-h as delete key
 (global-set-key (kbd "C-x C-g") 'goto-line)
 (define-key global-map (kbd "C-x /") 'comment-or-uncomment-region)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(git-gutter:added-sign "++")
+ '(git-gutter:deleted-sign "--")
+ '(git-gutter:modified-sign "  ")
+ '(package-selected-packages (quote (php-completion))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
