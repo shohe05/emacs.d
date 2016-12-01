@@ -59,9 +59,9 @@
 (setq make-backup-files nil) ;; do not make backup file
 (setq auto-save-default nil) ;; do not make auto save file
 (setq make-backup-files nil) ; do not make backup file
-
 ;; "yes or no" の選択を "y or n" にする
 (fset 'yes-or-no-p 'y-or-n-p)
+(setq require-final-newline t)
 ;; シフト＋矢印で範囲選択
 (setq pc-select-selection-keys-only t)
 (pc-selection-mode 1)
