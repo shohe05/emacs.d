@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: function
+# key: func
+# --
+/**
+ * Method description here
+ * @param {type} arg - arg description here
+ * @return {type} return description here
+ */
+${1:method}(${2:args}) {
+    $0
+}

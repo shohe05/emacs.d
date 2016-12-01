@@ -1,3 +1,12 @@
+;; 環境を日本語、UTF-8にする
+(set-locale-environment nil)
+(set-language-environment "Japanese")
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+(set-buffer-file-coding-system 'utf-8)
+(setq default-buffer-file-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(prefer-coding-system 'utf-8)
 ;; Install el-get if not
 
 ;; Added by Package.el.  This must come before configurations of
@@ -34,14 +43,49 @@
 (el-get-bundle git-gutter)
 (el-get-bundle helm-ls-git)
 (el-get-bundle markdown-mode)
-
+(el-get-bundle smart-newline)
+(el-get-bundle web-mode)
+(el-get-bundle tramp)
+(el-get-bundle js2-mode)
+(el-get-bundle multiple-cursors)
+(el-get-bundle yatex)
+(prefer-coding-system 'utf-8)
 (setq inhibit-startup-message t) ;; do not show message on start up
 (global-linum-mode t) ;; show line number
 (setq linum-format "%4d ")
 (menu-bar-mode 0) ;; do not show menu bar
+(tool-bar-mode 0) ;; do not show tool bar
 (show-paren-mode 1) ;; shine corresponding brackets
 (setq make-backup-files nil) ;; do not make backup file
 (setq auto-save-default nil) ;; do not make auto save file
+(setq make-backup-files nil) ; do not make backup file
+
+;; "yes or no" の選択を "y or n" にする
+(fset 'yes-or-no-p 'y-or-n-p)
+;; シフト＋矢印で範囲選択
+(setq pc-select-selection-keys-only t)
+(pc-selection-mode 1)
+;; Macのキーバインドを使う
+(mac-key-mode 1)
+;; C-kで行全体を削除する
+(setq kill-whole-line t)
+;; Macのoptionをメタキーにする
+(setq mac-option-modifier 'meta)
+;; use C-h as a backspace
+(keyboard-translate ?\C-h ?\C-?)
+;; ウィンドウ内に収まらないときだけ、カッコ内も光らせる
+(setq show-paren-style 'mixed)
+(set-face-background 'show-paren-match-face "grey")
+(set-face-foreground 'show-paren-match-face "black")
+
+;; 行末の空白を強調表示
+(setq-default show-trailing-whitespace t)
+(set-face-background 'trailing-whitespace "#b14770")
+
+;;Clipboardを他のアプリケーションと共通に
+(cond (window-system
+       (setq x-select-enable-clipboard t)
+       ))
 
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>")) ;; use C-h as delete key
 (global-set-key (kbd "C-x C-g") 'goto-line)
