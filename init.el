@@ -48,6 +48,7 @@
 (el-get-bundle js2-mode)
 (el-get-bundle multiple-cursors)
 (el-get-bundle yatex)
+
 ; (el-get-bundle ac-php)
 (prefer-coding-system 'utf-8)
 (setq inhibit-startup-message t) ;; do not show message on start up
@@ -76,6 +77,9 @@
 ;; 行末の空白を強調表示
 (setq-default show-trailing-whitespace t)
 (set-face-background 'trailing-whitespace "#b14770")
+
+;; 保存時に行末の空白を削除
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;;Clipboardを他のアプリケーションと共通に
 (cond (window-system
