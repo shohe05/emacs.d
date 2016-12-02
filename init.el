@@ -34,7 +34,6 @@
 (el-get-bundle yasnippet)
 (el-get-bundle helm)
 (el-get-bundle helm-gtags)
-
 (el-get-bundle volatile-highlights)
 (el-get-bundle color-theme-zenburn)
 (el-get-bundle smartparens)
@@ -49,6 +48,7 @@
 (el-get-bundle js2-mode)
 (el-get-bundle multiple-cursors)
 (el-get-bundle yatex)
+; (el-get-bundle ac-php)
 (prefer-coding-system 'utf-8)
 (setq inhibit-startup-message t) ;; do not show message on start up
 (global-linum-mode t) ;; show line number
@@ -64,15 +64,10 @@
 (setq require-final-newline t)
 ;; シフト＋矢印で範囲選択
 (setq pc-select-selection-keys-only t)
-(pc-selection-mode 1)
-;; Macのキーバインドを使う
-(mac-key-mode 1)
 ;; C-kで行全体を削除する
 (setq kill-whole-line t)
 ;; Macのoptionをメタキーにする
-(setq mac-option-modifier 'meta)
-;; use C-h as a backspace
-(keyboard-translate ?\C-h ?\C-?)
+; (setq mac-option-modifier 'meta)
 ;; ウィンドウ内に収まらないときだけ、カッコ内も光らせる
 (setq show-paren-style 'mixed)
 (set-face-background 'show-paren-match-face "grey")

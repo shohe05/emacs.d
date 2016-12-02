@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: protected
+# key: protec
+# --
+protected $${1:name};

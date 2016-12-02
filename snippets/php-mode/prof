@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: protected_function
+# key: prof
+# --
+protected function ${1:method}($
+${2:args})
+{
+    $0
+}
