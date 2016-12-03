@@ -48,6 +48,9 @@
 (el-get-bundle js2-mode)
 (el-get-bundle multiple-cursors)
 (el-get-bundle yatex)
+(el-get-bundle undo-tree)
+(el-get-bundle flycheck)
+(el-get-bundle helm-projectile)
 
 ; (el-get-bundle ac-php)
 (prefer-coding-system 'utf-8)
@@ -57,9 +60,12 @@
 (menu-bar-mode 0) ;; do not show menu bar
 (tool-bar-mode 0) ;; do not show tool bar
 (show-paren-mode 1) ;; shine corresponding brackets
-(setq make-backup-files nil) ;; do not make backup file
-(setq auto-save-default nil) ;; do not make auto save file
-(setq make-backup-files nil) ; do not make backup file
+; (setq make-backup-files nil) ;; do not make backup file
+(setq make-backup-files t)
+; (setq auto-save-default nil) ;; do not make auto save file
+(setq auto-save-file-name-transforms   '((".*" "/tmp/" t)))
+(setq auto-save-list-file-prefix nil)
+(setq create-lockfiles nil)
 ;; "yes or no" の選択を "y or n" にする
 (fset 'yes-or-no-p 'y-or-n-p)
 (setq require-final-newline t)
@@ -78,6 +84,10 @@
 (setq-default show-trailing-whitespace t)
 (set-face-background 'trailing-whitespace "#b14770")
 
+;; 矩形編集
+(cua-mode t)
+(setq cua-enable-cua-keys nil)
+
 ;; 保存時に行末の空白を削除
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -86,9 +96,12 @@
        (setq x-select-enable-clipboard t)
        ))
 
+;; 文字選択
+(define-key global-map (kbd "M-p") (kbd "M-b C-@ M-f"))
+
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>")) ;; use C-h as delete key
 (global-set-key (kbd "C-x C-g") 'goto-line)
-(define-key global-map (kbd "C-x /") 'comment-or-uncomment-region)
+(global-set-key (kbd "C-u") 'undo)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
