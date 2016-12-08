@@ -7,6 +7,7 @@
 (setq default-buffer-file-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
 (prefer-coding-system 'utf-8)
+
 ;; Install el-get if not
 
 ;; Added by Package.el.  This must come before configurations of
@@ -88,6 +89,18 @@
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
 
+;; M-x で helm-M-x
+(define-key global-map (kbd "M-x") 'helm-M-x)
+
+;; 最近使ったファイルをメニューに表示
+(recentf-mode t)
+;; 最近使ったファイルの表示数
+(setq recentf-max-menu-items 100)
+;; 最近開いたファイルの保存数を増やす
+(setq recentf-max-saved-items 3000)
+;; 最近開いたファイルを表示
+(define-key global-map (kbd "C-x e") 'helm-recentf)
+
 ;; 保存時に行末の空白を削除
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
@@ -95,6 +108,13 @@
 (cond (window-system
        (setq x-select-enable-clipboard t)
        ))
+
+
+;; 一行コピー
+(define-key global-map (kbd "C-x y") (kbd "C-a C-SPC C-e M-w"))
+
+;; 一行カット
+(define-key global-map (kbd "C-x x") (kbd "C-a C-SPC C-e C-w"))
 
 ;; 文字選択
 (define-key global-map (kbd "M-p") (kbd "M-b C-@ M-f"))
