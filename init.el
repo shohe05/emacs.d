@@ -89,17 +89,12 @@
 (cua-mode t)
 (setq cua-enable-cua-keys nil)
 
-;; M-x で helm-M-x
-(define-key global-map (kbd "M-x") 'helm-M-x)
-
 ;; 最近使ったファイルをメニューに表示
 (recentf-mode t)
 ;; 最近使ったファイルの表示数
 (setq recentf-max-menu-items 100)
 ;; 最近開いたファイルの保存数を増やす
 (setq recentf-max-saved-items 3000)
-;; 最近開いたファイルを表示
-(define-key global-map (kbd "C-x e") 'helm-recentf)
 
 ;; 保存時に行末の空白を削除
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
