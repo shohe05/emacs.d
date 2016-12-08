@@ -1,4 +1,7 @@
-;; 環境を日本語、UTF-8にする
+
+;;----------------------------------------------------------------------------
+;; 文字コード
+;;----------------------------------------------------------------------------
 (set-locale-environment nil)
 (set-language-environment "Japanese")
 (set-terminal-coding-system 'utf-8)
@@ -8,18 +11,19 @@
 (set-default-coding-systems 'utf-8)
 (prefer-coding-system 'utf-8)
 
-;; unset key
+
+;;----------------------------------------------------------------------------
+;; デフォルトのキーマップ無効化
+;;----------------------------------------------------------------------------
 (global-unset-key "\C-j")
 (global-unset-key "\C-q")
-;;(global-unset-key "\C-o")
 (global-unset-key "\C-t")
+;;(global-unset-key "\C-o")
 
-;; Install el-get if not
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+;;----------------------------------------------------------------------------
+;; パッケージ
+;;----------------------------------------------------------------------------
 (package-initialize)
 (insert )
 (add-to-list 'load-path (locate-user-emacs-file "el-get/el-get"))
@@ -30,7 +34,7 @@
     (goto-char (point-max))
     (eval-print-last-sexp)))
 
-;; 各パッケージの設定ファイルを ./init/init-パッケージ名 に読みに行く
+;; 各パッケージの設定ファイル(./init/init-{PACKAGE名}.el) を読む
 (setq el-get-user-package-directory (locate-user-emacs-file "init"))
 
 ;; packages
@@ -59,81 +63,78 @@
 (el-get-bundle flycheck)
 (el-get-bundle helm-projectile)
 
-; (el-get-bundle ac-php)
-(prefer-coding-system 'utf-8)
-(setq inhibit-startup-message t) ;; do not show message on start up
-(global-linum-mode t) ;; show line number
+
+;;----------------------------------------------------------------------------
+;; その他
+;;----------------------------------------------------------------------------
+;; 起動時のメッセージを非表示に
+(setq inhibit-startup-message t)
+;; 行番号を表示
+(global-linum-mode t)
+;; 行数のフォーマット
 (setq linum-format "%4d ")
-(menu-bar-mode 0) ;; do not show menu bar
-(tool-bar-mode 0) ;; do not show tool bar
-(show-paren-mode 1) ;; shine corresponding brackets
-; (setq make-backup-files nil) ;; do not make backup file
-(setq make-backup-files t)
-; (setq auto-save-default nil) ;; do not make auto save file
-(setq auto-save-file-name-transforms   '((".*" "/tmp/" t)))
-(setq auto-save-list-file-prefix nil)
-(setq create-lockfiles nil)
+;; メニューバーを非表示
+(menu-bar-mode 0)
+;; ツールバーを非表示
+(tool-bar-mode 0)
+;; 対応する括弧を目立たせる
+(show-paren-mode 1)
 ;; "yes or no" の選択を "y or n" にする
 (fset 'yes-or-no-p 'y-or-n-p)
-(setq require-final-newline t)
-;; シフト＋矢印で範囲選択
-(setq pc-select-selection-keys-only t)
-;; C-kで行全体を削除する
-(setq kill-whole-line t)
-;; Macのoptionをメタキーにする
-; (setq mac-option-modifier 'meta)
-;; ウィンドウ内に収まらないときだけ、カッコ内も光らせる
-(setq show-paren-style 'mixed)
-(set-face-background 'show-paren-match-face "grey")
-(set-face-foreground 'show-paren-match-face "black")
-
-;; 行末の空白を強調表示
-(setq-default show-trailing-whitespace t)
-(set-face-background 'trailing-whitespace "#b14770")
-
-;; 矩形編集
-(cua-mode t)
-(setq cua-enable-cua-keys nil)
-
-;; 最近使ったファイルをメニューに表示
-(recentf-mode t)
-;; 最近使ったファイルの表示数
-(setq recentf-max-menu-items 100)
-;; 最近開いたファイルの保存数を増やす
-(setq recentf-max-saved-items 3000)
-
 ;; 保存時に行末の空白を削除
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-;;Clipboardを他のアプリケーションと共通に
-(cond (window-system
-       (setq x-select-enable-clipboard t)
-       ))
-
+;;(add-hook 'before-save-hook (kbd "M-> C-o"))
 ;; カーソル位置記憶
 (save-place-mode 1)
 
-;; 一行コピー
+
+;;----------------------------------------------------------------------------
+;; バックアップ系(@see: http://yohshiy.blog.fc2.com/blog-entry-319.html)
+;;----------------------------------------------------------------------------
+;; オープン時(編集前)のファイルをバックアップとして残さない(ex: hoge.txt~)
+(setq make-backup-files t)
+;; emacsが異常終了したときに /tmp に自動保存ファイルを保存
+(setq auto-save-file-name-transforms   '((".*" "/tmp/" t)))
+;; 自動保存リストファイルを作らない
+(setq auto-save-list-file-prefix nil)
+;; ロックファイルを作らない
+(setq create-lockfiles nil)
+
+
+;;----------------------------------------------------------------------------
+;; recentf
+;;----------------------------------------------------------------------------
+(recentf-mode t)
+;; 最近開いたファイルの表示数
+(setq recentf-max-menu-items 100)
+;; 最近開いたファイルの保存数
+(setq recentf-max-saved-items 3000)
+
+
+;;----------------------------------------------------------------------------
+;; 編集まわり
+;;----------------------------------------------------------------------------
+;; C-q c で一行コピー
 (define-key global-map (kbd "C-q c") (kbd "C-a C-SPC C-e M-w"))
-
-;; 一行カット
+;; C-q x で一行カット
 (define-key global-map (kbd "C-q x") (kbd "C-a C-SPC C-e C-w"))
-
-;; 一行複製
+;; C-q d で一行複製
 (define-key global-map (kbd "C-q d") (kbd "C-a C-SPC C-e M-w C-e RET C-y"))
-
-;; 文字選択
+;; M-p でカーソル位置の文字選択 (multiple-cursol のM-n と併せて使うと同時編集)
 (define-key global-map (kbd "M-p") (kbd "M-b C-@ M-f"))
-
 ;; C-h で backspace
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
-
 ;; C-q l で指定した行へ移動
 (global-set-key (kbd "C-q l") 'goto-line)
-
-;; C-u で undo
+;; C-u で undo (undo-treeはC-x u で起動)
 (global-set-key (kbd "C-u") 'undo)
+;; C-kで行全体を削除する
+(setq kill-whole-line t)
 
+
+;;----------------------------------------------------------------------------
+;; 画面分割
+;;----------------------------------------------------------------------------
 ;; C-x l で右にウィンドウを開いてカーソル移動
 (define-key global-map (kbd "C-x l") (kbd "C-x 3 C-x o"))
 ;; C-x j で下にウィンドウを開いてカーソル移動
