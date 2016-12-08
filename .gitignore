@@ -3,5 +3,5 @@ ac-comphist.dat
 el-get/
 elpa/
 recentf
-init/
+*.elc
 places
