@@ -8,6 +8,12 @@
 (set-default-coding-systems 'utf-8)
 (prefer-coding-system 'utf-8)
 
+;; unset key
+(global-unset-key "\C-j")
+(global-unset-key "\C-q")
+(global-unset-key "\C-o")
+(global-unset-key "\C-t")
+
 ;; Install el-get if not
 
 ;; Added by Package.el.  This must come before configurations of
@@ -104,12 +110,17 @@
        (setq x-select-enable-clipboard t)
        ))
 
+;; カーソル位置記憶
+(save-place-mode 1)
 
 ;; 一行コピー
-(define-key global-map (kbd "C-x y") (kbd "C-a C-SPC C-e M-w"))
+(define-key global-map (kbd "C-q c") (kbd "C-a C-SPC C-e M-w"))
 
 ;; 一行カット
-(define-key global-map (kbd "C-x x") (kbd "C-a C-SPC C-e C-w"))
+(define-key global-map (kbd "C-q x") (kbd "C-a C-SPC C-e C-w"))
+
+;; 一行複製
+(define-key global-map (kbd "C-q d") (kbd "C-a C-SPC C-e M-w C-e RET C-y"))
 
 ;; 文字選択
 (define-key global-map (kbd "M-p") (kbd "M-b C-@ M-f"))
