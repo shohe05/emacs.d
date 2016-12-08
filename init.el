@@ -89,11 +89,11 @@
 ;; # 編集まわり
 ;;----------------------------------------------------------------------------
 ;; C-q c で一行コピー
-(define-key global-map (kbd "C-q c") (kbd "C-a C-SPC C-e M-w"))
+(define-key global-map (kbd "C-q c") (kbd "C-a TAB C-SPC C-e M-w"))
 ;; C-q x で一行カット
-(define-key global-map (kbd "C-q x") (kbd "C-a C-SPC C-e C-w"))
+(define-key global-map (kbd "C-q x") (kbd "C-a TAB C-SPC C-e C-w"))
 ;; C-q d で一行複製
-(define-key global-map (kbd "C-q d") (kbd "C-a C-SPC C-e M-w C-e RET C-y"))
+(define-key global-map (kbd "C-q d") (kbd "C-a TAB C-SPC C-e M-w C-e RET C-y"))
 ;; M-p でカーソル位置の文字選択 (multiple-cursol.el の M-n と併せて使うと同時編集)
 (define-key global-map (kbd "M-p") (kbd "M-b C-@ M-f"))
 ;; C-h で backspace
