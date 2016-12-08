@@ -11,7 +11,7 @@
 ;; unset key
 (global-unset-key "\C-j")
 (global-unset-key "\C-q")
-(global-unset-key "\C-o")
+;;(global-unset-key "\C-o")
 (global-unset-key "\C-t")
 
 ;; Install el-get if not
@@ -125,6 +125,20 @@
 ;; 文字選択
 (define-key global-map (kbd "M-p") (kbd "M-b C-@ M-f"))
 
-(define-key key-translation-map (kbd "C-h") (kbd "<DEL>")) ;; use C-h as delete key
-(global-set-key (kbd "C-x C-g") 'goto-line)
+;; C-h で backspace
+(define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
+
+;; C-q l で指定した行へ移動
+(global-set-key (kbd "C-q l") 'goto-line)
+
+;; C-u で undo
 (global-set-key (kbd "C-u") 'undo)
+
+;; C-x l で右にウィンドウを開いてカーソル移動
+(define-key global-map (kbd "C-x l") (kbd "C-x 3 C-x o"))
+;; C-x j で下にウィンドウを開いてカーソル移動
+(define-key global-map (kbd "C-x j") (kbd "C-x 2 C-x o"))
+;; C-x w で現在カーソルがあるウィンドウを削除
+(define-key global-map (kbd "C-x w") (kbd "C-x 0"))
+;; C-x w で現在カーソルがあるウィンドウ以外のウィンドウを全て削除
+(define-key global-map (kbd "C-x q") (kbd "C-x 1"))
