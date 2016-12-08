@@ -65,7 +65,7 @@
 
 
 ;;----------------------------------------------------------------------------
-;; # バックアップ系(@see: http://yohshiy.blog.fc2.com/blog-entry-319.html)
+;; # バックアップ系(ref: http://yohshiy.blog.fc2.com/blog-entry-319.html)
 ;;----------------------------------------------------------------------------
 ;; オープン時(編集前)のファイルをバックアップとして残さない(ex: hoge.txt~)
 (setq make-backup-files t)
@@ -96,7 +96,7 @@
 (define-key global-map (kbd "C-q x") (kbd "C-a C-SPC C-e C-w"))
 ;; C-q d で一行複製
 (define-key global-map (kbd "C-q d") (kbd "C-a C-SPC C-e M-w C-e RET C-y"))
-;; M-p でカーソル位置の文字選択 (multiple-cursol のM-n と併せて使うと同時編集)
+;; M-p でカーソル位置の文字選択 (multiple-cursol.el の M-n と併せて使うと同時編集)
 (define-key global-map (kbd "M-p") (kbd "M-b C-@ M-f"))
 ;; C-h で backspace
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
@@ -117,7 +117,7 @@
 (define-key global-map (kbd "C-x j") (kbd "C-x 2 C-x o"))
 ;; C-x w で現在カーソルがあるウィンドウを削除
 (define-key global-map (kbd "C-x w") (kbd "C-x 0"))
-;; C-x w で現在カーソルがあるウィンドウ以外のウィンドウを全て削除
+;; C-x q で現在カーソルがあるウィンドウ以外のウィンドウを全て削除
 (define-key global-map (kbd "C-x q") (kbd "C-x 1"))
 
 
