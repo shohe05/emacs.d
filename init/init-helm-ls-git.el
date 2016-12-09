@@ -1,1 +1,1 @@
-(global-set-key (kbd "C-x h") 'helm-ls-git-ls)
+(global-set-key (kbd "C-x i") 'helm-ls-git-ls)

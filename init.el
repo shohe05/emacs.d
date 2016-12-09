@@ -110,9 +110,17 @@
 ;; # 画面分割
 ;;----------------------------------------------------------------------------
 ;; C-x l で右にウィンドウを開いてカーソル移動
-(define-key global-map (kbd "C-x l") (kbd "C-x 3 C-x o"))
+(define-key global-map (kbd "C-x |") (kbd "C-x 3 C-x o"))
 ;; C-x j で下にウィンドウを開いてカーソル移動
-(define-key global-map (kbd "C-x j") (kbd "C-x 2 C-x o"))
+(define-key global-map (kbd "C-x -") (kbd "C-x 2 C-x o"))
+;; C-x l で右のウィンドウに移動
+(define-key global-map (kbd "C-x l") 'windmove-right)
+;; C-x h で左のウィンドウに移動
+(define-key global-map (kbd "C-x h") 'windmove-left)
+;; C-x j で下のウィンドウに移動
+(define-key global-map (kbd "C-x j") 'windmove-down)
+;; C-x k で上のウィンドウに移動
+(define-key global-map (kbd "C-x k") 'windmove-up)
 ;; C-x w で現在カーソルがあるウィンドウを削除
 (define-key global-map (kbd "C-x w") (kbd "C-x 0"))
 ;; C-x q で現在カーソルがあるウィンドウ以外のウィンドウを全て削除
