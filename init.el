@@ -41,7 +41,7 @@
 ;; (el-get-bundle auto-async-byte-compile)
 (el-get-bundle auto-complete)
 (el-get-bundle php-mode)
-(el-get-bundle php-completion)
+;;(el-get-bundle php-completion)
 (el-get-bundle yasnippet)
 (el-get-bundle helm)
 (el-get-bundle helm-gtags)
