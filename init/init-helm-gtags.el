@@ -1,6 +1,6 @@
 (require 'helm-gtags)
-(setq helm-gtags-ignore-case 1)
-(setq helm-gtags-auto-update 1)
+(setq helm-gtags-ignore-case t)
+(setq helm-gtags-auto-update t)
 (global-set-key (kbd "C-c j") 'helm-gtags-dwim)
 (global-set-key (kbd "C-c t") 'helm-gtags-find-tag)
 (global-set-key (kbd "C-c u") 'helm-gtags-find-rtag)
