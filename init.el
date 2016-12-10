@@ -20,8 +20,6 @@
 (global-unset-key "\C-t")
 (global-unset-key "\C-o")
 (global-unset-key "\C-u")
-(global-unset-key "\C-]")
-(global-unset-key "\C-/")
 
 
 ;;----------------------------------------------------------------------------
