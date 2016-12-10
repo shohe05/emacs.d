@@ -149,4 +149,6 @@
 ;; 保存時に行末の空白を削除
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; カーソル位置記憶
-(save-place-mode 1)
+(if (>= emacs-major-version 25)
+    (save-place-mode t)
+  (setq-default save-place t))
