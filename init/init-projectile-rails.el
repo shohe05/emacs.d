@@ -1,1 +1,0 @@
-; (projectile-rails-global-mode)

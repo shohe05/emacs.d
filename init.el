@@ -52,7 +52,7 @@
 (el-get-bundle multiple-cursors)
 (el-get-bundle helm-ag)
 (el-get-bundle git-gutter)
-(el-get-bundle helm-ls-git)
+;(el-get-bundle helm-ls-git)
 (el-get-bundle markdown-mode)
 (el-get-bundle smart-newline)
 (el-get-bundle web-mode)
