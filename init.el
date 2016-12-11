@@ -163,3 +163,5 @@
 (if (>= emacs-major-version 25)
     (save-place-mode t)
   (setq-default save-place t))
+;; C-o d で mysqlコンソールに入る
+(define-key global-map (kbd "C-o d") 'sql-mysql)
