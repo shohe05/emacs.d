@@ -62,6 +62,7 @@
 (el-get-bundle flycheck)
 (el-get-bundle helm-projectile)
 (el-get-bundle bbatsov/super-save)
+(el-get-bundle magit)
 
 
 ;;----------------------------------------------------------------------------
