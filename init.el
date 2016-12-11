@@ -166,3 +166,5 @@
   (setq-default save-place t))
 ;; C-o d で mysqlコンソールに入る
 (define-key global-map (kbd "C-o d") 'sql-mysql)
+;; C-o s で eshell 起動
+(define-key global-map (kbd "C-o s") 'eshell)
