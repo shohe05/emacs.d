@@ -63,7 +63,7 @@
 (el-get-bundle helm-projectile)
 (el-get-bundle bbatsov/super-save)
 (el-get-bundle magit)
-
+(el-get-bundle expand-region)
 
 ;;----------------------------------------------------------------------------
 ;; # バックアップ系
@@ -164,7 +164,7 @@
 (if (>= emacs-major-version 25)
     (save-place-mode t)
   (setq-default save-place t))
-;; C-o d で mysqlコンソールに入る
-(define-key global-map (kbd "C-o d") 'sql-mysql)
-;; C-o s で eshell 起動
-(define-key global-map (kbd "C-o s") 'eshell)
+;; C-t d で mysqlコンソールに入る
+(define-key global-map (kbd "C-t d") 'sql-mysql)
+;; C-t s で eshell 起動
+(define-key global-map (kbd "C-t s") 'eshell)
