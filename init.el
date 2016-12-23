@@ -23,6 +23,7 @@
 (global-unset-key "\M-f")
 (global-unset-key "\M-g")
 (global-unset-key "\M-r")
+(global-unset-key "\M-a")
 
 
 ;;----------------------------------------------------------------------------
