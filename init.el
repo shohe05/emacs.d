@@ -20,6 +20,9 @@
 (global-unset-key "\C-t")
 (global-unset-key "\C-o")
 (global-unset-key "\C-u")
+(global-unset-key "\M-f")
+(global-unset-key "\M-g")
+(global-unset-key "\M-r")
 
 
 ;;----------------------------------------------------------------------------
@@ -66,6 +69,7 @@
 (el-get-bundle expand-region)
 (el-get-bundle smooth-scroll)
 (el-get-bundle avy)
+(el-get-bundle anzu)
 
 
 ;;----------------------------------------------------------------------------
