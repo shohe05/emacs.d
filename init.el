@@ -64,6 +64,9 @@
 (el-get-bundle bbatsov/super-save)
 (el-get-bundle magit)
 (el-get-bundle expand-region)
+(el-get-bundle smooth-scroll)
+(el-get-bundle avy)
+
 
 ;;----------------------------------------------------------------------------
 ;; # バックアップ系
