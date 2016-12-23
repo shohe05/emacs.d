@@ -72,7 +72,7 @@
 ;; # バックアップ系
 ;;----------------------------------------------------------------------------
 ;; オープン時(編集前)のファイルをバックアップとして残さない(ex: hoge.txt~)
-(setq make-backup-files t)
+(setq make-backup-files nil)
 ;; emacsが異常終了したときに /tmp に自動保存ファイルを保存
 (setq auto-save-file-name-transforms   '((".*" "/tmp/" t)))
 ;; 自動保存リストファイルを作らない
