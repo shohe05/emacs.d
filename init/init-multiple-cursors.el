@@ -1,3 +1,5 @@
 (global-set-key (kbd "M-n") 'mc/mark-next-like-this)
 (global-set-key (kbd "M-p") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "M-s") 'mc/skip-to-next-like-this)
+(global-set-key (kbd "M-S") 'mc/skip-to-previous-like-this)
+(global-set-key (kbd "M-N") 'mc/mark-all-like-this)
