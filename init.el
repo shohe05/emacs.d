@@ -54,7 +54,7 @@
 ;; (el-get-bundle auto-async-byte-compile)
 (el-get-bundle auto-complete)
 (el-get-bundle php-mode)
-;;(el-get-bundle php-completion)
+(el-get-bundle php-completion)
 (el-get-bundle yasnippet)
 (el-get-bundle helm)
 (el-get-bundle helm-gtags)
@@ -80,6 +80,7 @@
 (el-get-bundle avy)
 (el-get-bundle anzu)
 (el-get-bundle fold-dwim)
+(el-get-bundle quickrun)
 
 
 ;;----------------------------------------------------------------------------
@@ -122,6 +123,8 @@
 (global-set-key (kbd "M-z") 'undo)
 ;; C-kで行全体を削除する
 (setq kill-whole-line t)
+;; コメントアウト
+(define-key global-map (kbd "M-/") (kbd "C-a C-SPC C-e M-; C-n"))
 
 
 ;;----------------------------------------------------------------------------
