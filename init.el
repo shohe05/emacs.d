@@ -15,15 +15,23 @@
 ;;----------------------------------------------------------------------------
 ;; # デフォルトのキーマップ無効化
 ;;----------------------------------------------------------------------------
-(global-unset-key "\C-j")
-(global-unset-key "\C-q")
-(global-unset-key "\C-t")
-(global-unset-key "\C-o")
-(global-unset-key "\C-u")
-(global-unset-key "\M-f")
+;; 使用済み
+(global-unset-key "\C-t") ; tmuxのprefix
+(global-unset-key "\C-j") ; helmまわり
+(global-unset-key "\C-o") ; unexpand-region
+(global-unset-key "\M-f") ; ファイル内検索
+(global-unset-key "\M-r") ; 置換まわり
+(global-unset-key "\M-j") ; avy-go-to-word
+(global-unset-key "\M-b") ; 1行カット
+(global-unset-key "\M-d") ; 1行複製
+(global-unset-key "\M-c") ; 1行コピー
+(global-unset-key "\M-z") ; undo
+
+;; 未使用
 (global-unset-key "\M-g")
-(global-unset-key "\M-r")
 (global-unset-key "\M-a")
+(global-unset-key "\C-u")
+(global-unset-key "\C-q")
 
 
 ;;----------------------------------------------------------------------------
@@ -56,7 +64,7 @@
 (el-get-bundle multiple-cursors)
 (el-get-bundle helm-ag)
 (el-get-bundle git-gutter)
-;(el-get-bundle helm-ls-git)
+(el-get-bundle helm-ls-git)
 (el-get-bundle markdown-mode)
 (el-get-bundle smart-newline)
 (el-get-bundle web-mode)
@@ -71,6 +79,7 @@
 (el-get-bundle smooth-scroll)
 (el-get-bundle avy)
 (el-get-bundle anzu)
+(el-get-bundle fold-dwim)
 
 
 ;;----------------------------------------------------------------------------
@@ -99,20 +108,18 @@
 ;;----------------------------------------------------------------------------
 ;; # 編集まわり
 ;;----------------------------------------------------------------------------
-;; C-q c で一行コピー
-(define-key global-map (kbd "C-q c") (kbd "C-a TAB C-SPC C-e M-w"))
-;; C-q x で一行カット
-(define-key global-map (kbd "C-q x") (kbd "C-a TAB C-SPC C-e C-w"))
-;; C-q d で一行複製
-(define-key global-map (kbd "C-q d") (kbd "C-a TAB C-SPC C-e M-w C-e RET C-y"))
+;; M-c で一行コピー
+(define-key global-map (kbd "M-c") (kbd "C-a TAB C-SPC C-e M-w"))
+;; M-x で一行カット
+(define-key global-map (kbd "M-b") (kbd "C-a TAB C-SPC C-e C-w C-h"))
+;; M-d で一行複製
+(define-key global-map (kbd "M-d") (kbd "C-a TAB C-SPC C-e M-w C-e RET C-y"))
 ;; M-p でカーソル位置の文字選択 (multiple-cursol.el の M-n と併せて使うと同時編集)
 (define-key global-map (kbd "M-p") (kbd "M-b C-@ M-f"))
 ;; C-h で backspace
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
-;; C-q l で指定した行へ移動
-(global-set-key (kbd "C-q l") 'goto-line)
-;; C-u で undo (undo-treeはC-x u で起動)
-(global-set-key (kbd "C-u") 'undo)
+;; M-z で undo (undo-treeはC-x u で起動)
+(global-set-key (kbd "M-z") 'undo)
 ;; C-kで行全体を削除する
 (setq kill-whole-line t)
 
@@ -172,7 +179,3 @@
 (if (>= emacs-major-version 25)
     (save-place-mode t)
   (setq-default save-place t))
-;; C-t d で mysqlコンソールに入る
-(define-key global-map (kbd "C-t d") 'sql-mysql)
-;; C-t s で eshell 起動
-(define-key global-map (kbd "C-t s") 'eshell)
