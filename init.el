@@ -174,6 +174,8 @@
 (tool-bar-mode 0)
 ;; 対応する括弧を目立たせる
 (show-paren-mode 1)
+;; 括弧で囲まれた箇所をハイライト
+(setq show-paren-style 'expression)
 ;; "yes or no" の選択を "y or n" にする
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; 保存時に行末の空白を削除
