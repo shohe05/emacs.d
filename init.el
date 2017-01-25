@@ -83,6 +83,7 @@
 (el-get-bundle quickrun)
 (el-get-bundle go-mode)
 (el-get-bundle go-autocomplete)
+(el-get-bundle go-eldoc)
 
 
 ;;----------------------------------------------------------------------------
