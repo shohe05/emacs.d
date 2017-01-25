@@ -81,6 +81,7 @@
 (el-get-bundle anzu)
 (el-get-bundle fold-dwim)
 (el-get-bundle quickrun)
+(el-get-bundle go-mode)
 
 
 ;;----------------------------------------------------------------------------
@@ -184,3 +185,5 @@
 (if (>= emacs-major-version 25)
     (save-place-mode t)
   (setq-default save-place t))
+;; タブ幅
+(setq-default tab-width 4)
