@@ -82,6 +82,7 @@
 (el-get-bundle fold-dwim)
 (el-get-bundle quickrun)
 (el-get-bundle go-mode)
+(el-get-bundle go-autocomplete)
 
 
 ;;----------------------------------------------------------------------------
