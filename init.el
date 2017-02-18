@@ -71,7 +71,6 @@
 (el-get-bundle js2-mode)
 (el-get-bundle multiple-cursors)
 (el-get-bundle undo-tree)
-(el-get-bundle flycheck)
 (el-get-bundle helm-projectile)
 (el-get-bundle bbatsov/super-save)
 (el-get-bundle magit)
@@ -84,13 +83,12 @@
 (el-get-bundle go-mode)
 (el-get-bundle go-autocomplete)
 (el-get-bundle go-eldoc)
-(el-get-bundle go-flycheck)
 
 ;;----------------------------------------------------------------------------
 ;; # バックアップ系
 ;;----------------------------------------------------------------------------
 ;; オープン時(編集前)のファイルをバックアップとして残さない(ex: hoge.txt~)
-(setq make-backup-files nil)
+(setq make-backup-files t)
 ;; emacsが異常終了したときに /tmp に自動保存ファイルを保存
 (setq auto-save-file-name-transforms   '((".*" "/tmp/" t)))
 ;; 自動保存リストファイルを作らない
