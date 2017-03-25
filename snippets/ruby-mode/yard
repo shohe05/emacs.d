@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: yard
+# key: yard
+# --
+# $0
+#
+# @param ${1:arg} [${2:type}] ${3:description}
+# @return [${4:type}] ${5:description}

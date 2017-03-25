@@ -88,7 +88,7 @@
 ;; # バックアップ系
 ;;----------------------------------------------------------------------------
 ;; オープン時(編集前)のファイルをバックアップとして残さない(ex: hoge.txt~)
-(setq make-backup-files t)
+(setq make-backup-files nil)
 ;; emacsが異常終了したときに /tmp に自動保存ファイルを保存
 (setq auto-save-file-name-transforms   '((".*" "/tmp/" t)))
 ;; 自動保存リストファイルを作らない
@@ -187,3 +187,5 @@
   (setq-default save-place t))
 ;; タブ幅
 (setq-default tab-width 4)
+;; ruby-modeで # coding: utf-8 を自動で挿入しない
+(setq ruby-insert-encoding-magic-comment nil)
