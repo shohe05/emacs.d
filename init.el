@@ -83,6 +83,10 @@
 (el-get-bundle go-mode)
 (el-get-bundle go-autocomplete)
 (el-get-bundle go-eldoc)
+(el-get-bundle mmm-mode)
+(el-get-bundle vue-html-mode)
+(el-get-bundle ssass-mode)
+(el-get-bundle CodeFalling/vue-mode)
 
 ;;----------------------------------------------------------------------------
 ;; # バックアップ系
@@ -189,3 +193,9 @@
 (setq-default tab-width 4)
 ;; ruby-modeで # coding: utf-8 を自動で挿入しない
 (setq ruby-insert-encoding-magic-comment nil)
+;;; スクロールを一行ずつにする
+(setq scroll-step 1)
+;;; スクロールバーを右側に表示する
+(set-scroll-bar-mode 'right)
+
+(add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
