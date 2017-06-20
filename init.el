@@ -83,9 +83,9 @@
 (el-get-bundle go-mode)
 (el-get-bundle go-autocomplete)
 (el-get-bundle go-eldoc)
-(el-get-bundle mmm-mode)
-(el-get-bundle vue-html-mode)
-(el-get-bundle ssass-mode)
+(el-get-bundle purcell/mmm-mode)
+(el-get-bundle AdamNiederer/ssass-mode)
+(el-get-bundle AdamNiederer/vue-html-mode)
 (el-get-bundle CodeFalling/vue-mode)
 
 ;;----------------------------------------------------------------------------
@@ -126,6 +126,8 @@
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
 ;; C-u で undo (undo-treeはC-x u で起動)
 (global-set-key (kbd "C-u") 'undo)
+;; M-g で goto-line
+(global-set-key (kbd "M-g") 'goto-line)
 ;; C-kで行全体を削除する
 (setq kill-whole-line t)
 ;; コメントアウト
@@ -177,10 +179,16 @@
 (menu-bar-mode 0)
 ;; ツールバーを非表示
 (tool-bar-mode 0)
+;; 現在の行をハイライト
+(global-hl-line-mode t)
 ;; 対応する括弧を目立たせる
 (show-paren-mode 1)
 ;; 括弧で囲まれた箇所をハイライト
 (setq show-paren-style 'expression)
+;; 選択範囲に色を付ける
+(setq transient-mark-mode t)
+(set-face-foreground 'region "black")
+(set-face-background 'region "DarkOrange")
 ;; "yes or no" の選択を "y or n" にする
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; 保存時に行末の空白を削除
@@ -194,8 +202,11 @@
 ;; ruby-modeで # coding: utf-8 を自動で挿入しない
 (setq ruby-insert-encoding-magic-comment nil)
 ;;; スクロールを一行ずつにする
-(setq scroll-step 1)
+(setq scroll-conservatively 1)
 ;;; スクロールバーを右側に表示する
-(set-scroll-bar-mode 'right)
+;; (set-scroll-bar-mode 'right)
+;; (setq scroll-preserve-screen-position 'always)
 
-(add-to-list 'auto-mode-alist '("\\.vue\\'" . vue-mode))
+(setq scroll-margin 5)
+(setq next-screen-context-lines 5)
+(setq scroll-preserve-screen-position t)
