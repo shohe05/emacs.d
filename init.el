@@ -25,14 +25,14 @@
 (global-unset-key "\M-b") ; 1行カット
 (global-unset-key "\M-d") ; 1行複製
 (global-unset-key "\M-c") ; 1行コピー
-(global-unset-key "\M-z") ; undo
+(global-unset-key "\C-u") ; undo
+(global-unset-key "\M-g") ; goto-line
+(global-unset-key "\M-l") ; helm kill ring
 
 ;; 未使用
-(global-unset-key "\M-g")
 (global-unset-key "\M-a")
-(global-unset-key "\C-u")
+(global-unset-key "\M-z")
 (global-unset-key "\C-q")
-
 
 ;;----------------------------------------------------------------------------
 ;; # パッケージ
@@ -174,17 +174,17 @@
 ;; 行番号を表示
 (global-linum-mode t)
 ;; 行数のフォーマット
-(setq linum-format "%4d ")
+(setq linum-format "%4d  ")
 ;; メニューバーを非表示
 (menu-bar-mode 0)
 ;; ツールバーを非表示
 (tool-bar-mode 0)
 ;; 現在の行をハイライト
-(global-hl-line-mode t)
+;;(global-hl-line-mode t)
 ;; 対応する括弧を目立たせる
 (show-paren-mode 1)
 ;; 括弧で囲まれた箇所をハイライト
-(setq show-paren-style 'expression)
+;;(setq show-paren-style 'expression)
 ;; 選択範囲に色を付ける
 (setq transient-mark-mode t)
 (set-face-foreground 'region "black")
