@@ -124,8 +124,8 @@
 (define-key global-map (kbd "M-p") (kbd "M-b C-@ M-f"))
 ;; C-h で backspace
 (define-key key-translation-map (kbd "C-h") (kbd "<DEL>"))
-;; M-z で undo (undo-treeはC-x u で起動)
-(global-set-key (kbd "M-z") 'undo)
+;; C-u で undo (undo-treeはC-x u で起動)
+(global-set-key (kbd "C-u") 'undo)
 ;; C-kで行全体を削除する
 (setq kill-whole-line t)
 ;; コメントアウト
