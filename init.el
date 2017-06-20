@@ -201,11 +201,13 @@
 (setq-default tab-width 4)
 ;; ruby-modeで # coding: utf-8 を自動で挿入しない
 (setq ruby-insert-encoding-magic-comment nil)
+;; kill ring の上限
+(setq kill-ring-max 10000)
 ;;; スクロールを一行ずつにする
 (setq scroll-conservatively 1)
-;;; スクロールバーを右側に表示する
-;; (set-scroll-bar-mode 'right)
-;; (setq scroll-preserve-screen-position 'always)
+;; スクロールバーを右側に表示する
+;; (scroll-bar-mode 'right)
+(setq scroll-preserve-screen-position 'always)
 
 (setq scroll-margin 5)
 (setq next-screen-context-lines 5)
