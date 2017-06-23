@@ -67,7 +67,7 @@
 (el-get-bundle helm-ls-git)
 (el-get-bundle markdown-mode)
 (el-get-bundle smart-newline)
-(el-get-bundle web-mode)
+(el-get-bundle web-modne)
 (el-get-bundle js2-mode)
 (el-get-bundle multiple-cursors)
 (el-get-bundle undo-tree)
@@ -198,7 +198,8 @@
     (save-place-mode t)
   (setq-default save-place t))
 ;; タブ幅
-(setq-default tab-width 4)
+(setq-default tab-width 2)
+(setq-default indent-tabs-mode nil)
 ;; ruby-modeで # coding: utf-8 を自動で挿入しない
 (setq ruby-insert-encoding-magic-comment nil)
 ;; kill ring の上限
@@ -212,3 +213,17 @@
 (setq scroll-margin 5)
 (setq next-screen-context-lines 5)
 (setq scroll-preserve-screen-position t)
+
+(require 'whitespace)
+(setq whitespace-style '(face           ; faceで可視化
+                         trailing       ; 行末
+                         tabs           ; タブ
+;;                         empty          ; 先頭/末尾の空行
+                         space-mark     ; 表示のマッピング
+                         tab-mark
+                         ))
+
+(setq whitespace-display-mappings
+      '((tab-mark ?\t [?\u00BB ?\t] [?\\ ?\t])))
+
+(global-whitespace-mode 1)
