@@ -53,8 +53,6 @@
 ;; packages
 ;; (el-get-bundle auto-async-byte-compile)
 (el-get-bundle auto-complete)
-(el-get-bundle php-mode)
-(el-get-bundle php-completion)
 (el-get-bundle yasnippet)
 (el-get-bundle helm)
 (el-get-bundle helm-gtags)
@@ -65,10 +63,7 @@
 (el-get-bundle helm-ag)
 (el-get-bundle git-gutter)
 (el-get-bundle helm-ls-git)
-(el-get-bundle markdown-mode)
 (el-get-bundle smart-newline)
-(el-get-bundle web-modne)
-(el-get-bundle js2-mode)
 (el-get-bundle multiple-cursors)
 (el-get-bundle undo-tree)
 (el-get-bundle helm-projectile)
@@ -80,13 +75,6 @@
 (el-get-bundle anzu)
 (el-get-bundle fold-dwim)
 (el-get-bundle quickrun)
-(el-get-bundle go-mode)
-(el-get-bundle go-autocomplete)
-(el-get-bundle go-eldoc)
-(el-get-bundle purcell/mmm-mode)
-(el-get-bundle AdamNiederer/ssass-mode)
-(el-get-bundle AdamNiederer/vue-html-mode)
-(el-get-bundle CodeFalling/vue-mode)
 
 ;;----------------------------------------------------------------------------
 ;; # バックアップ系
